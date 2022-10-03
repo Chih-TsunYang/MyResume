@@ -1,0 +1,113 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% My Resume/CV
+%
+% Using Awesome Resume/CV Template:
+% Original author:
+%   Claud D. Park (posquit0.bj@gmail.com)
+% Modifications by:
+%   Vel (vel@latextemplates.com)
+% License:
+%   CC BY-NC-SA 4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+%
+% Magic line for latex building:
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 unicode
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%   PACKAGES AND CONFIGURATIONS FOR DOCUMENT
+%----------------------------------------------------------------------------------------
+\documentclass[11pt, a4paper]{awesome-cv}
+\usepackage[utf8]{inputenc} % replace by the encoding you are using
+\geometry{left=2cm, top=1.5cm, right=2cm, bottom=2cm, footskip=.5cm} % Configure page margins with geometry
+
+\fontdir[fonts/]
+\colorlet{awesome}{awesome-red}
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+%----------------------------------------------------------------------------------------
+%   PACKAGES AND CONFIGURATIONS FOR PUBLICATION LIST
+%----------------------------------------------------------------------------------------
+% package "geometry" has problems with pacakge "url" and "biblatex".
+\usepackage{url}
+\usepackage[citestyle=numeric-comp,style=chem-acs,articletitle=true,natbib,backend=biber,texencoding=UTF-8]{biblatex}
+\addbibresource{./ChihTsun_Yang_Publications.bib}
+\renewcommand*{\bibfont}{\fontsize{10}{\baselineskip}\selectfont}
+
+
+%----------------------------------------------------------------------------------------
+%   OTHER PACKAGES AND CONFIGS
+%----------------------------------------------------------------------------------------
+\usepackage{romannum}   % Usage: \romannum{} for lower case, and \Romannum{} for upper case
+
+% Replace the fifth field into a minipage, allowing line break, itemize and enumerate
+\renewcommand*{\cventry}[5]{
+  \vspace{-2.0mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+    \ifempty{#2#3}
+      {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
+      \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{\begin{minipage}{\textwidth}
+        #5
+    \end{minipage}}}
+  \end{tabular*}%
+}
+% cventry without discription in order to reducing the line space
+\newcommand*{\cventrynodiscription}[4]{
+  \vspace{-2.0mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+    \ifempty{#2#3}
+      {\entrypositionstyle{#1} & \entrydatestyle{#4}}
+      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
+      \entrypositionstyle{#1} & \entrydatestyle{#4}}
+  \end{tabular*}%
+}
+
+\renewenvironment*{cvskills}{%
+\vspace{\acvSectionContentTopSkip}
+\vspace{-2.0mm}
+\begin{center}
+  \setlength\tabcolsep{1ex}
+  \setlength{\extrarowheight}{0.5\baselineskip}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} R{\textwidth * \real{0.15}} L{\textwidth * \real{0.83}}}
+}{%
+  \end{tabular*}
+\end{center}
+}
+%----------------------------------------------------------------------------------------
+%   PERSONAL INFORMATION
+%----------------------------------------------------------------------------------------
+\name{Chih-Tsun}{Yang}
+\address{407038, No.18, Yingcheng 5th St., Xitun Dist., Taichung City, Taiwan}
+\mobile{(+886) 981 128 851}
+\email{ChihTsun.Yang@gmail.com}
+
+\position{Applying to the Doctor of Philosophy in Chemistry program at University of Colorado -- Boulder}
+\makecvfooter{\today}{Chih-Tsun Yang~~~·~~~Résumé}{\thepage} % Specify the letter footer with 3 arguments: (<left>, <center>, <right>), leave any of these blank if they are not needed
+
+%----------------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+\makecvheader
+\input{sections/education.tex}
+
+\input{sections/experience.tex}
+
+\input{sections/honors.tex}
+
+\input{sections/publication.tex}
+
+\input{sections/presentation.tex}
+
+\input{sections/skills.tex}
+
+\input{sections/extracurricular_activitiy.tex}
+
+\end{document}
