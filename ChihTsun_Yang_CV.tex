@@ -33,7 +33,7 @@
 \usepackage{url}
 \usepackage[citestyle=numeric-comp,style=chem-acs,articletitle=true,natbib,backend=biber,texencoding=UTF-8]{biblatex}
 \addbibresource{./ChihTsun_Yang_Publications.bib}
-\renewcommand*{\bibfont}{\fontsize{10}{\baselineskip}\selectfont}
+\renewcommand*{\bibfont}{\fontsize{10}{\baselineskip}\selectfont\color{black}}
 
 
 %----------------------------------------------------------------------------------------
@@ -41,21 +41,6 @@
 %----------------------------------------------------------------------------------------
 \usepackage{romannum}   % Usage: \romannum{} for lower case, and \Romannum{} for upper case
 
-% Replace the fifth field into a minipage, allowing line break, itemize and enumerate
-\renewcommand*{\cventry}[5]{
-  \vspace{-2.0mm}
-  \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-    \ifempty{#2#3}
-      {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
-      \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{\begin{minipage}{\textwidth}
-        #5
-    \end{minipage}}}
-  \end{tabular*}%
-}
 % cventry without discription in order to reducing the line space
 \newcommand*{\cventrynodiscription}[4]{
   \vspace{-2.0mm}
@@ -69,17 +54,6 @@
   \end{tabular*}%
 }
 
-\renewenvironment*{cvskills}{%
-\vspace{\acvSectionContentTopSkip}
-\vspace{-2.0mm}
-\begin{center}
-  \setlength\tabcolsep{1ex}
-  \setlength{\extrarowheight}{0.5\baselineskip}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} R{\textwidth * \real{0.15}} L{\textwidth * \real{0.83}}}
-}{%
-  \end{tabular*}
-\end{center}
-}
 %----------------------------------------------------------------------------------------
 %   PERSONAL INFORMATION
 %----------------------------------------------------------------------------------------
@@ -99,7 +73,7 @@
 \input{sections/education.tex}
 
 \input{sections/experience.tex}
-
+\newpage
 \input{sections/honors.tex}
 
 \input{sections/publication.tex}
@@ -107,7 +81,7 @@
 \input{sections/presentation.tex}
 
 \input{sections/skills.tex}
-
+\newpage
 \input{sections/extracurricular_activitiy.tex}
 
 \end{document}
