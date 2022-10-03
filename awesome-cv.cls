@@ -379,6 +379,8 @@
 % Others
 \newcommand{\acvSectionTopSkip}{3mm}
 \newcommand{\acvSectionContentTopSkip}{2.5mm}
+\newcommand{\acvAfterCventrySkip}{1.5mm}
+\newcommand{\acvAfterCventriesSkip}{-3.0mm}
 
 % cvskills
 \newcommand{\acvSkillsextrarowheight}{0.5\baselineskip}
@@ -566,6 +568,7 @@
   \begin{center}
 }{%
   \end{center}
+  \vspace{\acvAfterCventriesSkip}
 }
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
@@ -580,6 +583,7 @@
       \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
   \end{tabular*}%
+  \vspace{\acvAfterCventrySkip}
 }
 
 % Define an environment for cvsubentry
