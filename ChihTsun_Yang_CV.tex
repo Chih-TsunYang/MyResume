@@ -20,16 +20,13 @@
 %----------------------------------------------------------------------------------------
 \documentclass[11pt, a4paper]{awesome-cv}
 \usepackage[utf8]{inputenc} % replace by the encoding you are using
-\geometry{left=2cm, top=1.5cm, right=2cm, bottom=2cm, footskip=.5cm} % Configure page margins with geometry
 
 \fontdir[fonts/]
 \colorlet{awesome}{awesome-red}
-\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
-
+\setstretch{1.1}
 %----------------------------------------------------------------------------------------
 %   PACKAGES AND CONFIGURATIONS FOR PUBLICATION LIST
 %----------------------------------------------------------------------------------------
-% package "geometry" has problems with pacakge "url" and "biblatex".
 \usepackage{url}
 \usepackage[citestyle=numeric-comp,style=chem-acs,articletitle=true,natbib,backend=biber,texencoding=UTF-8]{biblatex}
 \addbibresource{./ChihTsun_Yang_Publications.bib}
@@ -40,20 +37,6 @@
 %   OTHER PACKAGES AND CONFIGS
 %----------------------------------------------------------------------------------------
 \usepackage{romannum}   % Usage: \romannum{} for lower case, and \Romannum{} for upper case
-
-% cventry without discription in order to reducing the line space
-\newcommand*{\cventrynodiscription}[4]{
-  \vspace{-2.0mm}
-  \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-    \ifempty{#2#3}
-      {\entrypositionstyle{#1} & \entrydatestyle{#4}}
-      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
-      \entrypositionstyle{#1} & \entrydatestyle{#4}}
-  \end{tabular*}%
-  \vspace{\acvAfterCventrySkip}
-}
 
 %----------------------------------------------------------------------------------------
 %   PERSONAL INFORMATION
@@ -73,16 +56,20 @@
 \makecvheader
 \input{sections/education.tex}
 
-\input{sections/experience.tex}
-\newpage
-\input{sections/honors.tex}
+\input{sections/research_experience.tex}
 
+\input{sections/teaching_experience.tex}
+\newpage
 \input{sections/publication.tex}
+
+\input{sections/honors.tex}
 
 \input{sections/presentation.tex}
 
+\input{sections/language.tex}
+
 \input{sections/skills.tex}
-\newpage
-\input{sections/extracurricular_activitiy.tex}
+
+% \input{sections/extracurricular_activitiy.tex}
 
 \end{document}
