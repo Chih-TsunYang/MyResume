@@ -66,6 +66,8 @@
 \RequirePackage{etoolbox}
 % Needed to change line spacing in specific environment
 \RequirePackage{setspace}
+% Force T1 font encoding, instead of the default OT1
+\RequirePackage[T1]{fontenc}
 % Needed to manage fonts
 \RequirePackage[quiet]{fontspec}
 % To support LaTeX quoting style
